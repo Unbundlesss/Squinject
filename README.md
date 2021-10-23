@@ -7,3 +7,10 @@ Squinject is a workaround that takes the compiled outputs from Squonker, reforma
 
 It's rough and ready currently, but does work fine!
 
+### How Do
+
+1. Build Squinject
+2. Put it next to Squonker; and build all your soundpacks
+3. run `Squinject <path_to_endlesss_studio_root>`
+
+Note this is only tested on Windows so far. Honk!
