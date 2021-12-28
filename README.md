@@ -5,29 +5,36 @@ The new system uses another Couchbase Lite database, synced from the Endlesss se
 
 Squinject is a workaround that takes the compiled outputs from Squonker, reformats them and injects them into the local Couchbase sqlite3 database & sample cache so that they appear correctly alongside all the regular packs.
 
-It's a bit sketchy but it works.
+It's much clunkier than the original soundpack hack, but it does work!
+
+1. Build Squinject
+2. Create a subdirectory in your Squonker root for it to live in, eg. `D:\Squonker\Squinject`
+3. Stuff the build in there
+4. Build your soundpacks using Squonker
+5. open a terminal in your Squonker root ... 
 
 
+### *Injecting into Endlesss Studio*
 
- Studio:
-
- run `squinject.exe studio`
+ run 
+ 
+ `squinject/squinject.exe studio`
 
  Squinject will read your studio installation directory from the registry.
 
+<br>
 
- iOS:
+### *Injecting into iOS* 
 
 `squonker ios-injection-pull`
-`squinject ios`
+
+(this fetches the database from the device, saved into `.\injection_db`)
+
+`squinject/squinject ios`
+
+(this runs the injection process against that downloaded directory)
+
 `squonker ios-injection-push`
 
+(this pushes the changes back to iOS. Note as of writing I haven't finished this bit yet)
 
-
-### How Do
-
-1. Build Squinject
-2. Put it next to Squonker; and build all your soundpacks
-3. run `Squinject <path_to_endlesss_studio_root>`
-
-Note this is only tested on Windows so far. Honk!
