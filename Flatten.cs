@@ -13,6 +13,15 @@ namespace Squinject
             return type.IsValueType || type == typeof( string );
         }
 
+        internal static bool IsInteger( this Type type )
+        {
+            return type == typeof( Int32 ) || type == typeof( Int64 );
+        }
+        internal static bool IsDouble( this Type type )
+        {
+            return type == typeof( float ) || type == typeof( double );
+        }
+
         internal static string ToStringValueType( this object value )
         {
             if ( value is DateTime dtv )
@@ -58,7 +67,12 @@ namespace Squinject
                     continue;
                 }
 
-                if ( property.PropertyType.IsValueTypeOrString() )
+                if ( property.PropertyType.IsInteger() || property.PropertyType.IsDouble() )
+                {
+                    object foo = value;
+                    dictionary[key] = foo;
+                }
+                else if ( property.PropertyType.IsValueTypeOrString() )
                 {
                     dictionary[key] = value.ToStringValueType();
                 }

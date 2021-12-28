@@ -5,7 +5,24 @@ The new system uses another Couchbase Lite database, synced from the Endlesss se
 
 Squinject is a workaround that takes the compiled outputs from Squonker, reformats them and injects them into the local Couchbase sqlite3 database & sample cache so that they appear correctly alongside all the regular packs.
 
-It's rough and ready currently, but does work fine!
+It's a bit sketchy but it works.
+
+
+
+ Studio:
+
+ run `squinject.exe studio`
+
+ Squinject will read your studio installation directory from the registry.
+
+
+ iOS:
+
+`squonker ios-injection-pull`
+`squinject ios`
+`squonker ios-injection-push`
+
+
 
 ### How Do
 
